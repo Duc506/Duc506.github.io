@@ -1,11 +1,14 @@
-// tìm các input fields theo id
-var usernameInput = document.getElementById("username");
-var passwordInput = document.getElementById("password");
+import axios from 'axios';
 
-// thiết lập giá trị cho username và password fields
-usernameInput.value = "username";
-passwordInput.value = "password";
+const API_URL = 'http://example.com/api'; //địa chỉ của API trên trang web
+const LOGIN_URL = `${API_URL}/login`;     //Địa chỉ đăng nhập
 
-// tìm form login và submit form
-var loginForm = document.getElementById("login-form");
-loginForm.submit();
+axios.post(LOGIN_URL, {                    //Request đăng nhập bằng phương thức POST
+  email: 'your-email@example.com',          //nhập email để đăng nhập
+  password: 'your-password'                 //nhập password để đăng nhập
+}).then(response => {
+  const token = response.data.token;        //lấy token trả về từ API
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`; //lưu token vào Headers cho các request tiếp theo
+}).catch(error => {
+  console.error(error);
+});
