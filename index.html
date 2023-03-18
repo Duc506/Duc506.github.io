@@ -1,81 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Nạp điện thoại trực tuyến</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-		}
-		form {
-			margin: 20px 0;
-		}
-		label {
-			display: block;
-			margin-bottom: 5px;
-		}
-		input[type="text"], input[type="number"] {
-			padding: 5px;
-			margin-bottom: 10px;
-		}
-		input[type="submit"] {
-			background-color: #4CAF50;
-			color: white;
-			padding: 10px;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			font-size: medium;
-		}
-		input[type="submit"]:hover {
-			background-color: #3e8e41;
-		}
-		.result {
-			margin-top: 20px;
-			background-color: lightgray;
-			padding: 10px;
-			border: 1px solid black;
-			border-radius: 5px;
-		}
-	</style>
-</head>
-<body>
-	<h1>Nạp điện thoại trực tuyến</h1>
-	<form onsubmit="submitForm(event)">
-		<label for="phone">Số điện thoại:</label>
-		<input type="text" id="phone" placeholder="Nhập số điện thoại" required>
-		<label for="provider">Nhà mạng:</label>
-		<select id="provider" required>
-			<option value="" disabled selected>-- Chọn nhà mạng --</option>
-			<option value="Viettel">Viettel</option>
-			<option value="Mobifone">Mobifone</option>
-			<option value="Vinaphone">Vinaphone</option>
-		</select>
-		<label for="amount">Mệnh giá:</label>
-		<input type="number" id="amount" placeholder="Nhập mệnh giá số tiền" required>
-		<input type="submit" value="Xác nhận">
-	</form>
-	<div class="result">
-		<p id="phone-number"></p>
-		<p id="provider-name"></p>
-		<p id="amount-value"></p>
-		<p id="total"></p>
-	</div>
-	<script>
-		function submitForm(event) {
-			event.preventDefault();
-			var phone = document.getElementById("phone").value;
-			var provider = document.getElementById("provider").value;
-			var amount = document.getElementById("amount").value;
-			var total = calculateTotal(amount);
-			document.getElementById("phone-number").innerHTML = "Số điện thoại: " + phone;
-			document.getElementById("provider-name").innerHTML = "Nhà mạng: " + provider;
-			document.getElementById("amount-value").innerHTML = "Mệnh giá: " + amount + "đ";
-			document.getElementById("total").innerHTML = "Số tiền phải thanh toán: " + total + "đ";
-		}
-		function calculateTotal(amount) {
-			// Giả sử là 1% phí giao dịch
-			return amount * 1.01;
-		}
-	</script>
-</body>
-</html>
+// tìm các input fields theo id
+var usernameInput = document.getElementById("username");
+var passwordInput = document.getElementById("password");
+
+// thiết lập giá trị cho username và password fields
+usernameInput.value = "username";
+passwordInput.value = "password";
+
+// tìm form login và submit form
+var loginForm = document.getElementById("login-form");
+loginForm.submit();
