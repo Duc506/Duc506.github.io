@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GitHub Signup/Login Example</title>
+    <title>Login Example</title>
     <!-- CSS -->
     <style>
       body {
@@ -10,7 +10,7 @@
       form {
         border: 3px solid #f1f1f1;
       }
-      input[type=text], input[type=password], input[type=email], input[type=submit] {
+      input[type=text], input[type=password], input[type=submit] {
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -36,25 +36,10 @@
     </style>
   </head>
   <body>
-    <!-- Đăng ký/Đăng nhập form -->
-    <h2>GitHub Signup/Login Example</h2>
+    <!-- Đăng nhập form -->
+    <h2>Login Example</h2>
     <form>
       <div class="container">
-        <h3>Sign up</h3>
-        <label for="username"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" required>
-
-        <label for="email"><b>Email</b></label>
-        <input type="email" placeholder="Enter Email" name="email" required>
-
-        <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
-
-        <button type="submit">Sign up</button>
-      </div>
-
-      <div class="container">
-        <h3>Login</h3>
         <label for="username"><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="username" required>
 
@@ -62,24 +47,30 @@
         <input type="password" placeholder="Enter Password" name="password" required>
 
         <button type="submit">Login</button>
+        <br>
+        <span>Don't have an account? <a href="#" id="registerLink">Click here</a></span>
       </div>
     </form>
 
     <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script>
+      const registerLink = document.getElementById('registerLink');
+      registerLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.location.replace('https://github.com/join');
+      });
+
       const form = document.querySelector('form');
       form.addEventListener('submit', (event) => {
         event.preventDefault();
 
         const username = document.forms[0]['username'].value;
-        const email = document.forms[0]['email'].value;
         const password = document.forms[0]['password'].value;
 
         // Gửi request đăng nhập đến GitHub
         axios.post('https://api.github.com/user', {
           login: username,
-          email: email,
           password: password
         })
         .then(response => {
