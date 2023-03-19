@@ -30,6 +30,7 @@
         </div>
         <button type="submit" class="btn btn-primary" id="btnLogin">Đăng nhập</button>
       </form>
+      <p>Nếu chưa có tài khoản? Hãy <a href="https://sites.google.com/view/shopkakogm/register">đăng ký</a>.</p>
     </div>
 
     <!-- JavaScript -->
@@ -40,8 +41,16 @@
         $('#btnLogin').on('click', function(event) {
           event.preventDefault();
 
-          // Chuyển hướng đến trang Đăng nhập mới
-          window.location.href = 'https://sites.google.com/view/shopkakogm';
+          // Kiểm tra tên đăng nhập và mật khẩu
+          var username = $('#username').val();
+          var password = $('#password').val();
+          if (username === 'Duc506' && password === 'anhduc10') {
+            // Nếu thông tin đăng nhập đúng, chuyển hướng đến trang thành công
+            window.location.href = 'https://sites.google.com/view/shopkakogm';
+          } else {
+            // Nếu thông tin đăng nhập không đúng, hiển thị thông báo lỗi
+            alert('Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại!');
+          }
         });
       });
     </script>
