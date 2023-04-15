@@ -1,70 +1,66 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Vui lòng đăng nhập</title>
-    <!-- CSS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .container {
-        margin-top: 30px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Đăng nhập form -->
-    <div class="container">
-      <h2>Vui lòng đăng nhập</h2>
-      <form>
-        <div class="form-group">
-          <label for="username"><b>Tên đăng nhập</b></label>
-          <input type="text" class="form-control" placeholder="Nhập tên đăng nhập" name="username" id="username" required autofocus>
-        </div>
-        <div class="form-group">
-          <label for="password"><b>Mật khẩu</b></label>
-          <input type="password" class="form-control" placeholder="Nhập mật khẩu" name="password" id="password" required>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block" id="btnLogin">Đăng nhập</button>
-      </form>
-      <p>Nếu chưa có tài khoản? Hãy <a href="https://Duc506-dangki.github.io">đăng ký</a>.</p>
-    </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop Bán Tài Khoản Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Shop Bán Tài Khoản Game</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#">Trang chủ</a></li>
+      <li><a href="#">Sản phẩm</a></li>
+      <li><a href="#">Liên hệ</a></li>
+    </ul>
+  </nav>
+  <div id="gioithieu">
+    <h2>Giới thiệu</h2>
+    <p>Chào mừng bạn đến với Shop Bán Tài Khoản Game! Chúng tôi cung cấp các tài khoản game chất lượng với giá cả hợp lý. Hãy đăng ký để nhận thông tin về các sản phẩm mới nhất của chúng tôi.</p>
+    <form>
+      <label for="email">Địa chỉ email:</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Đăng ký</button>
+    </form>
+  </div>
+  <div id="sanpham">
+    <h2>Sản phẩm</h2>
+    <ul>
+      <li>
+        <h3>Tài khoản PUBG</h3>
+        <p>Giá: 200.000 đ</p>
+        <button>Mua ngay</button>
+      </li>
+      <li>
+        <h3>Tài khoản LOL</h3>
+        <p>Giá: 150.000 đ</p>
+        <button>Mua ngay</button>
+      </li>
+      <li>
+        <h3>Tài khoản Free Fire</h3>
+        <p>Giá: 100.000 đ</p>
+        <button>Mua ngay</button>
+      </li>
+    </ul>
+  </div>
+  <div id="lienhe">
+    <h2>Liên hệ</h2>
+    <p>Nếu bạn có bất kỳ câu hỏi hoặc yêu cầu nào, hãy liên hệ với chúng tôi bằng cách điền vào biểu mẫu bên dưới hoặc gửi email trực tiếp đến địa chỉ <a href="mailto:contact@shopbantkgame.com">contact@shopbantkgame.com</a>.</p>
+    <form>
+      <label for="name">Họ và tên:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Địa chỉ email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Nội dung tin nhắn:</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">Gửi</button>
+</form>
 
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        // Bắt sự kiện khi nhấn vào nút Đăng nhập
-        $('#btnLogin').on('click', function(event) {
-          event.preventDefault();
-
-          // Kiểm tra tên đăng nhập và mật khẩu
-          var username = $('#username').val();
-          var password = $('#password').val();
-          if (username === 'Duc506' && password === 'anhduc10') {
-            // Nếu thông tin đăng nhập đúng, chuyển hướng đến trang thành công
-            window.location.href = 'https://sites.google.com/view/shopkakogm';
-          } else {
-            // Nếu thông tin đăng nhập không đúng, hiển thị thông báo lỗi
-            alert('Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại!');
-          }
-        });
-
-        // Sử dụng HTML5 validation để kiểm tra tên đăng nhập và mật khẩu
-        $('form').on('submit', function(event) {
-          if (this.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          this.classList.add('was-validated');
-        });
-      });
-    </script>
-    <!-- JavaScript Bootstrap và Popper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  </body>
+  </div>
+  <footer>
+    <p>Shop Bán Tài Khoản Game &copy; 2023</p>
+  </footer>
+</body>
 </html>
