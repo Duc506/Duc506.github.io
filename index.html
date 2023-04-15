@@ -1,66 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Shop Bán Tài Khoản Game</title>
-  <link rel="stylesheet" href="style.css">
+	<title>Trợ lý ảo</title>
+	<style>
+		body {
+			background-color: #f1f1f1;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.container {
+			background-color: #ffffff;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			margin: 30px auto;
+			max-width: 600px;
+			padding: 30px;
+			text-align: center;
+		}
+		
+		h1 {
+			color: #333333;
+			font-size: 36px;
+			font-weight: bold;
+			margin-bottom: 30px;
+		}
+		
+		label {
+			display: block;
+			font-size: 18px;
+			margin-bottom: 10px;
+			text-align: left;
+		}
+		
+		input[type="text"] {
+			border: 2px solid #cccccc;
+			border-radius: 4px;
+			font-size: 16px;
+			margin-bottom: 20px;
+			padding: 10px;
+			width: 100%;
+		}
+		
+		button {
+			background-color: #007bff;
+			border: none;
+			border-radius: 4px;
+			color: #ffffff;
+			cursor: pointer;
+			font-size: 18px;
+			padding: 10px 20px;
+			transition: background-color 0.3s ease;
+		}
+		
+		button:hover {
+			background-color: #0069d9;
+		}
+		
+		p {
+			font-size: 24px;
+			margin-top: 30px;
+			text-align: left;
+		}
+	</style>
 </head>
 <body>
-  <header>
-    <h1>Shop Bán Tài Khoản Game</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#">Trang chủ</a></li>
-      <li><a href="#">Sản phẩm</a></li>
-      <li><a href="#">Liên hệ</a></li>
-    </ul>
-  </nav>
-  <div id="gioithieu">
-    <h2>Giới thiệu</h2>
-    <p>Chào mừng bạn đến với Shop Bán Tài Khoản Game! Chúng tôi cung cấp các tài khoản game chất lượng với giá cả hợp lý. Hãy đăng ký để nhận thông tin về các sản phẩm mới nhất của chúng tôi.</p>
-    <form>
-      <label for="email">Địa chỉ email:</label>
-      <input type="email" id="email" name="email" required>
-      <button type="submit">Đăng ký</button>
-    </form>
-  </div>
-  <div id="sanpham">
-    <h2>Sản phẩm</h2>
-    <ul>
-      <li>
-        <h3>Tài khoản PUBG</h3>
-        <p>Giá: 200.000 đ</p>
-        <button>Mua ngay</button>
-      </li>
-      <li>
-        <h3>Tài khoản LOL</h3>
-        <p>Giá: 150.000 đ</p>
-        <button>Mua ngay</button>
-      </li>
-      <li>
-        <h3>Tài khoản Free Fire</h3>
-        <p>Giá: 100.000 đ</p>
-        <button>Mua ngay</button>
-      </li>
-    </ul>
-  </div>
-  <div id="lienhe">
-    <h2>Liên hệ</h2>
-    <p>Nếu bạn có bất kỳ câu hỏi hoặc yêu cầu nào, hãy liên hệ với chúng tôi bằng cách điền vào biểu mẫu bên dưới hoặc gửi email trực tiếp đến địa chỉ <a href="mailto:contact@shopbantkgame.com">contact@shopbantkgame.com</a>.</p>
-    <form>
-      <label for="name">Họ và tên:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">Địa chỉ email:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="message">Nội dung tin nhắn:</label>
-      <textarea id="message" name="message" required></textarea>
-      <button type="submit">Gửi</button>
-</form>
-
-  </div>
-  <footer>
-    <p>Shop Bán Tài Khoản Game &copy; 2023</p>
-  </footer>
+	<div class="container">
+		<h1>Trợ lý ảo</h1>
+		<form>
+			<label for="userInput">Nhập câu hỏi của bạn:</label>
+			<input type="text" id="userInput" name="userInput"><br><br>
+			<button type="button" onclick="getResponse()">Gửi</button>
+		</form>
+		<p id="response"></p>
+	</div>
+	
+	<script>
+		function getResponse() {
+			// Lấy câu hỏi từ người dùng
+			var question = document.getElementById("userInput").value;
+			
+			// Xử lý câu hỏi và lấy câu trả lời từ trợ lý ảo
+			var answer = getAnswer(question);
+			
+			// Hiển thị câu trả lời lên trang web
+			document.getElementById("response").innerHTML = answer;
+		}
+		
+		function getAnswer(question) {
+			// Viết mã xử lý câu hỏi và trả về câu trả lời tương ứng từ trợ lý ảo
+			// Ví dụ: 
+			if (question == "Bạn tên gì?") {
+				return "Tôi là trợ lý ảo, bạn có thể gọi tôi là Virtual Assistant.";
+			} else if (question == "Bạn có thể làm gì?") {
+				return "Tôi có thể giúp bạn
+Tìm kiếm thông tin trên mạng
+Tra cứu từ điển
+Đọc tin tức mới nhất
+} else {
+return "Xin lỗi, tôi không hiểu câu hỏi của bạn. Vui lòng thử lại.";
+}
+}
+</script>
 </body>
 </html>
