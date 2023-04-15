@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  margin: 0 10px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f00;
+}
+
+#gioithieu {
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input,
+form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+form button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+form button[type="submit"]:hover {
+  background-color: #f00;
+  cursor: pointer;
+}
+
+#sanpham {
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+#sanpham h3 {
+  margin-top: 0;
+}
+
+#sanpham p {
+  margin-bottom: 10px;
+}
+
+#sanpham button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+#sanpham button:hover {
+  background-color: #f00;
+  cursor: pointer;
+}
+
+#lienhe {
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+#lienhe form label,
+#lienhe form textarea {
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
