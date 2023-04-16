@@ -1,36 +1,67 @@
+/* Thiết lập các thuộc tính mặc định cho trang web */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Thiết lập phần tiêu đề trang web */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Thiết lập danh sách sản phẩm */
 .product-list {
-	display: flex;
-	flex-wrap: wrap;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .product-item {
-	width: 24%;
-	margin: 1%;
-	background-color: #fff;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: calc(33.33% - 10px);
 }
 
 .product-item img {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .product-item h3 {
-	margin: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
 }
 
 .product-item p {
-	margin: 10px;
-	font-weight: bold;
-}
-
-.product-item:nth-child(odd) {
-	background-image: url('background1.jpg');
-}
-
-.product-item:nth-child(even) {
-	background-image: url('background2.jpg');
+  text-align: center;
+  font-size: 16px;
+  color: #999;
 }
